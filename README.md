@@ -1,8 +1,3 @@
-
-
-## `README.md`
-
-```markdown
 # 📊 Telco Customer Churn Prediction
 
 ## 🎯 Project Overview
@@ -37,16 +32,16 @@ End-to-end machine learning model to predict customer churn for a telecom compan
 ├── 📁 notebook/
 │   └── Churn_Prediction_Model.ipynb
 ├── 📁 src/
-│   ├── predict.py          # Prediction module
-│   ├── train.py            # Training script
-│   └── utils.py            # Helper functions
+│   ├── predict.py
+│   ├── train.py
+│   └── utils.py
 ├── 📁 tests/
-│   └── test_predict.py     # Unit tests
-├── app.py                  # FastAPI web app
-├── requirements.txt        # Dependencies
-├── .gitignore              # Git ignore
-├── setup.py                # Package setup
-└── README.md               # This file
+│   └── test_predict.py
+├── app.py
+├── requirements.txt
+├── .gitignore
+├── setup.py
+└── README.md
 ```
 
 ---
@@ -55,8 +50,8 @@ End-to-end machine learning model to predict customer churn for a telecom compan
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/telco-churn-prediction.git
-cd telco-churn-prediction
+git clone https://github.com/Aditya-Sharma-dev18/Churn-Prediction-Model.git
+cd Churn-Prediction-Model
 ```
 
 ### 2. Install Dependencies
@@ -110,9 +105,9 @@ python -m pytest tests/
 
 | Churn Driver | Insight | Business Action |
 |--------------|---------|-----------------|
-| **Contract** | Month-to-month customers churn 5x more than 2-year contracts | Offer 10-15% discount for 1-year/2-year contract upgrades |
-| **Tenure** | Customers with <6 months tenure are highest risk | Implement onboarding calls & welcome offers in first 3 months |
-| **MonthlyCharges** | High-billed customers (>$80) are price-sensitive | Launch loyalty rewards program for high-value customers |
+| **Contract** | Month-to-month customers churn 5x more | Offer 10-15% discount for 1-year/2-year contracts |
+| **Tenure** | Customers with <6 months tenure are highest risk | Onboarding calls & welcome offers in first 3 months |
+| **MonthlyCharges** | High-billed customers (>$80) are price-sensitive | Loyalty rewards program for high-value customers |
 | **OnlineSecurity** | Customers without security churn 2x more | Bundle OnlineSecurity free for first 3 months |
 | **TechSupport** | Lack of support drives churn | Proactive outreach to customers without TechSupport |
 
@@ -124,13 +119,12 @@ python -m pytest tests/
 |----------|--------------|
 | **Language** | Python 3.10+ |
 | **Data Processing** | Pandas, NumPy |
-| **Machine Learning** | Scikit-learn (Random Forest, Preprocessing) |
+| **Machine Learning** | Scikit-learn (Random Forest) |
 | **Model Comparison** | XGBoost, Logistic Regression |
 | **Visualization** | Matplotlib, Seaborn |
 | **Model Serialization** | Joblib |
 | **Deployment** | FastAPI, Uvicorn |
 | **Testing** | Pytest |
-| **Version Control** | Git, GitHub |
 
 ---
 
@@ -143,134 +137,12 @@ python -m pytest tests/
 - **Target:** Churn (Yes/No)
 - **Churn Rate:** 26.6%
 
-### Features Used (8 Important Columns)
-| Feature | Type | Description |
-|---------|------|-------------|
-| tenure | Numerical | Number of months customer stayed |
-| MonthlyCharges | Numerical | Monthly bill amount |
-| Contract | Categorical | Month-to-month, One year, Two year |
-| OnlineSecurity | Categorical | Yes/No/No internet service |
-| TechSupport | Categorical | Yes/No/No internet service |
-| OnlineBackup | Categorical | Yes/No/No internet service |
-| Dependents | Categorical | Yes/No |
-| Partner | Categorical | Yes/No |
-
----
-
-## 📊 Model Performance
-
-### Confusion Matrix
-```
-              Predicted
-              Stay   Churn
-Actual Stay   1023    98
-Actual Churn  179    109
-```
-
-### Classification Report
-| Class | Precision | Recall | F1-Score |
-|-------|-----------|--------|----------|
-| Stay | 0.85 | 0.91 | 0.88 |
-| Churn | 0.53 | 0.38 | 0.44 |
-
-### ROC Curve
-- **AUC Score:** 0.84
-
----
-
-## 🧪 Sample Predictions
-
-### High Risk Customer
-```python
-customer = {
-    'tenure': 2,
-    'MonthlyCharges': 85,
-    'Contract': 'Month-to-month',
-    'OnlineSecurity': 'No',
-    'TechSupport': 'No',
-    'OnlineBackup': 'No',
-    'Dependents': 'No',
-    'Partner': 'No'
-}
-
-# Result:
-# Churn Probability: 78.5%
-# Risk Level: HIGH
-# Action: Offer discount NOW!
-```
-
-### Low Risk Customer
-```python
-customer = {
-    'tenure': 60,
-    'MonthlyCharges': 45,
-    'Contract': 'Two year',
-    'OnlineSecurity': 'Yes',
-    'TechSupport': 'Yes',
-    'OnlineBackup': 'Yes',
-    'Dependents': 'Yes',
-    'Partner': 'Yes'
-}
-
-# Result:
-# Churn Probability: 12.3%
-# Risk Level: LOW
-# Action: No action needed
-```
-
----
-
-## 🚀 Deployment Options
-
-### 1. FastAPI (Local)
-```bash
-python app.py
-```
-
-### 2. Docker
-```bash
-docker build -t churn-prediction .
-docker run -p 8000:8000 churn-prediction
-```
-
-### 3. Cloud Deployment
-- **Render:** Deploy FastAPI app directly
-- **Heroku:** Deploy with `Procfile`
-- **AWS/GCP/Azure:** Deploy with Docker
-
----
-
-## 📝 Future Improvements
-
-- [ ] Add SHAP explainability
-- [ ] Implement feature engineering
-- [ ] Add more models (LightGBM, CatBoost)
-- [ ] Build Streamlit dashboard
-- [ ] Add CI/CD pipeline
-- [ ] Implement model monitoring
-
 ---
 
 ## 👨‍💻 Author
 
-**Your Name**
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- GitHub: [github.com/yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- IBM for providing the Telco Customer Churn dataset
-- Scikit-learn team for excellent ML libraries
-- FastAPI team for easy API development
+**Aditya Sharma**
+- GitHub: [Aditya-Sharma-dev18](https://github.com/Aditya-Sharma-dev18)
 
 ---
 
@@ -278,6 +150,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you found this project helpful, please give it a ⭐ on GitHub!
 
-```
-
-
+---
